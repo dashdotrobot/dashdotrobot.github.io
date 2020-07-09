@@ -9,7 +9,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:8000/blog/super-hexagon/">
+<link rel="canonical" href="https://dashdotrobot.com/blog/super-hexagon/">
 
         <meta name="author" content="Matt Ford" />
         <meta name="keywords" content="matlab,diversions" />
@@ -18,7 +18,7 @@
         <meta property="og:site_name" content="dashdotrobot.com" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="How long will it take me to beat Super Hexagon?"/>
-        <meta property="og:url" content="http://localhost:8000/blog/super-hexagon/"/>
+        <meta property="og:url" content="https://dashdotrobot.com/blog/super-hexagon/"/>
         <meta property="og:description" content="Will I ever beat Super Hexagon? I collect some data, calculate some statistics, construct a disjoint failure-rate model, and find out!"/>
         <meta property="article:published_time" content="2014-12-31" />
             <meta property="article:section" content="blog" />
@@ -26,18 +26,18 @@
             <meta property="article:tag" content="diversions" />
             <meta property="article:author" content="Matt Ford" />
             <meta property="og:image"
-                  content="http://localhost:8000/images/avatar.png"/>
+                  content="https://dashdotrobot.com/images/avatar.png"/>
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://localhost:8000/theme/css/bootstrap.min.css" type="text/css"/>
+        <link rel="stylesheet" href="https://dashdotrobot.com/theme/css/bootstrap.min.css" type="text/css"/>
 
     <!-- Enable FontAwesome and AcademIcons -->
-    <link href="http://localhost:8000/theme/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://localhost:8000/theme/css/academicons.css"/>
+    <link href="https://dashdotrobot.com/theme/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://dashdotrobot.com/theme/css/academicons.css"/>
 
-    <link href="http://localhost:8000/theme/css/pygments/native.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://localhost:8000/theme/css/style.css" type="text/css"/>
+    <link href="https://dashdotrobot.com/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://dashdotrobot.com/theme/css/style.css" type="text/css"/>
 
 
 
@@ -56,19 +56,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="http://localhost:8000/" class="navbar-brand">
-<img class="img-responsive pull-left gap-right" src="http://localhost:8000//images/avatar.png" width="30px"/> dashdotrobot.com            </a>
+            <a href="https://dashdotrobot.com/" class="navbar-brand">
+<img class="img-responsive pull-left gap-right" src="https://dashdotrobot.com//images/avatar.png" width="30px"/> dashdotrobot.com            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="http://localhost:8000/curriculum-vitae/">
+                         <li><a href="https://dashdotrobot.com/curriculum-vitae/">
                              C.V.
                           </a></li>
                         <li class="active">
-                            <a href="http://localhost:8000/blog/">Blog</a>
+                            <a href="https://dashdotrobot.com/blog/">Blog</a>
                         </li>
                         <li >
-                            <a href="http://localhost:8000/projects/">Projects</a>
+                            <a href="https://dashdotrobot.com/projects/">Projects</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -90,7 +90,7 @@
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://localhost:8000/blog/super-hexagon/"
+                    <a href="https://dashdotrobot.com/blog/super-hexagon/"
                        rel="bookmark"
                        title="Permalink to How long will it take me to beat Super Hexagon?">
                         How long will it take me to beat Super Hexagon?
@@ -111,9 +111,9 @@
 
 
 <span class="label label-default">Tags</span>
-	<a href="http://localhost:8000/tag/matlab.html">matlab</a>
+	<a href="https://dashdotrobot.com/tag/matlab.html">matlab</a>
         /
-	<a href="http://localhost:8000/tag/diversions.html">diversions</a>
+	<a href="https://dashdotrobot.com/tag/diversions.html">diversions</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -128,14 +128,14 @@
 <h2>Gathering statistics</h2>
 <p>The goal of Super Hexagon is to dodge an endless stream of collapsing line segments and survive as long as possible. First I generated some data on my gameplay. I played 150 consecutive games on "hexagonest" mode and recorded my score (survival time) for each. I have already been playing this game off and on for about a month, so there's reason to believe that my learning curve is relatively flat. Additionally, I played a few warm-up matches before recording statistics.</p>
 <p>One of my central assumptions will be that my performance from match to match is <a href="http://en.wikipedia.org/wiki/Stationary_process">stationary</a>, that is, my score on match <span class="math">\(n\)</span> is independent of my score on previous matches and does not depend on how many matches I have played.</p>
-<p><img alt="Average performance over time" src="http://localhost:8000/images/super-hexagon/time_bins1.png"></p>
+<p><img alt="Average performance over time" src="https://dashdotrobot.com/images/super-hexagon/time_bins1.png"></p>
 <p>If I was getting better over time, I would expect my median performance to shift upwards. The plot above shows the outcomes of all the matches in light gray and the medians (and 20% and 80% percentiles) for each group of 15 matches. I don't seem to be improving (or getting worse) over time. Secondly my performance on match <span class="math">\(n\)</span> is uncorrelated with my performance on match <span class="math">\(n-1\)</span> (corresponding to a lag of 1 in the autocorrelation function shown below). The outcome of the <a href="http://en.wikipedia.org/wiki/Ljung%E2%80%93Box_test">Ljung-Box</a> test also comes up negative for a lag of 1, confirming what we can already tell visually. Namely, that doing well (or poorly) on a match doesn't cause me to do any better (or worse) on the next match.</p>
-<p><img alt="Time-lag autocorrelation" src="http://localhost:8000/images/super-hexagon/autocorr1.png"></p>
+<p><img alt="Time-lag autocorrelation" src="https://dashdotrobot.com/images/super-hexagon/autocorr1.png"></p>
 <h2>Extreme distributions</h2>
 <p>So if my match-to-match performance is a stationary process, what is the distribution of survival times? As expected, I typically <a href="http://www.slate.com/articles/arts/culturebox/2014/01/samuel_beckett_s_quote_fail_better_becomes_the_mantra_of_silicon_valley.html">fail early and often</a>. The game presents a variety of different challenges, but they are randomly generated each time, so there's reason to believe that my failure statistics might follow an <a href="http://en.wikipedia.org/wiki/Exponential_distribution">exponential distribution</a>. Why is that? Well, let's assume that in each instant, my failure probability is constant (because the game presents the same challenge, on average, at every moment). Therefore my tendency to make a mistake is a <a href="http://en.wikipedia.org/wiki/Poisson_process">Poisson process</a>.</p>
-<p><img alt="Histogram of survival times" src="http://localhost:8000/images/super-hexagon/hist.png"></p>
+<p><img alt="Histogram of survival times" src="https://dashdotrobot.com/images/super-hexagon/hist.png"></p>
 <p>The cumulative distribution function <span class="math">\(F(t)\)</span> gives the probability that the failure time will be less than <span class="math">\(t\)</span>. So the probability of exceeding a certain threshold is <span class="math">\(1−F(t)\)</span>. The exponential distribution, <span class="math">\(F(t)=1−e^{−λt}\)</span> yields a very poor fit to the data. The two-parameter Weibull distribution function, <span class="math">\(F(t)=1−e^{(t/τ)^k}\)</span> does much better. We'll look at the key difference between these distributions later.</p>
-<p><img alt="Cumulative probability of survival times" src="http://localhost:8000/images/super-hexagon/cdf.png"></p>
+<p><img alt="Cumulative probability of survival times" src="https://dashdotrobot.com/images/super-hexagon/cdf.png"></p>
 <h2>Waiting for a Black Swan</h2>
 <p>How do we predict the probability of occurrence of an event that we've never witnessed? Nassim Nicholas Taleb refers to this kind of event as a <a href="http://en.wikipedia.org/wiki/Black_swan_theory">Black Swan</a>, especially if it has a disproportionate impact, like a market crash or extreme flood.</p>
 <blockquote>
@@ -147,7 +147,7 @@
 <p>The number of attempts I will need to make in order to be 95% certain of success is <span class="math">\(\frac{\ln{(1-0.95)}}{\ln{(1-P_{60})}}\)</span>. Extrapolating the two-parameter Weibull distribution to find <span class="math">\(P_{60}\)</span> and assuming that each game takes 9.6 seconds each leads a prediction of 2 billion years. I could do better things with that time, like maybe finish my PhD.</p>
 <h2>The trouble with tails</h2>
 <p>The problem with predicting extreme events by extrapolating mundane data is that the prediction is extremely sensitive to the shape of the <strong>tail</strong> of the distribution (the shape at large values). There is some statistical uncertainty in the fitting parameters, in this case, for <span class="math">\(\lambda\)</span> and <span class="math">\(k\)</span> for the Weibull distribution. Depending on the confidence level you select (95% for many applications), each parameter is expressed as <span class="math">\(p\pm \epsilon\)</span>. By taking the largest and smallest values for <span class="math">\(\lambda\)</span> and <span class="math">\(k\)</span>, we get two new distributions from which we can calculate two new time estimates.</p>
-<p><img alt="Weibull upper and lower bounds" src="http://localhost:8000/images/super-hexagon/weib_bounds.png"></p>
+<p><img alt="Weibull upper and lower bounds" src="https://dashdotrobot.com/images/super-hexagon/weib_bounds.png"></p>
 <p>The confidence bounds are shown with dotted red lines. The tails of all three distributions are indistinguishable, but they give very different estimates. The lower estimate predicts 21 million years, while the upper one predicts 260 billion years or <strong>20 times the age of the universe!</strong> Mind you, these estimates come from the statistical uncertainty of the fit and do not represent upper and lower bounds, in any sense, of the actual time required. So clearly, the prediction of extreme events is extremely sensitive to the shape of the tail. So what governs the shape?</p>
 <h2>Beginner's Luck vs. "Flow"</h2>
 <p>The Weibull distribution (and the exponential distribution, which is just a special case where <span class="math">\(k=1\)</span>) is often used to model the time-to-failure of parts or materials, or the time between discrete events like earthquakes or floods. If the distribution of times-to-failure is known, the instantaneous failure risk (the probability of failure occurring in the time interval <span class="math">\(t\)</span> to <span class="math">\(t+dt\)</span> can be calculated. If <span class="math">\(P(t)\)</span> is the cumulative distribution function of failure times, the failure risk is</p>
@@ -155,7 +155,7 @@
 <p>So, for the Weibull distribution (<span class="math">\(F(t)=1-e^{-(t/\lambda)^k}\)</span>), the failure risk is</p>
 <div class="math">$$r(t)= \frac{k(\frac{t}{λ})^{k−1} \frac{1}{λ}e^{−(t/λ)^k}} {e^{−(t/λ)^k}} = \frac{k}{\lambda} \left(\frac{t}{\lambda}\right)^{k-1}$$</div>
 <p>So the failure risk follows a power law with time. For the special case of an exponential distribution (<span class="math">\(k=1\)</span>), the risk is constant with time.</p>
-<p><img alt="Failure risk vs. time" src="http://localhost:8000/images/super-hexagon/f_risk1.png"></p>
+<p><img alt="Failure risk vs. time" src="https://dashdotrobot.com/images/super-hexagon/f_risk1.png"></p>
 <p>Why might the failure risk change over time? Super Hexagon requires concentration (also the ability to not blink...) so your tendency to make a mistake may increase as you lose mental focus. After some time though, I've found that I lose my sense of time somewhat and experience what some call "flow." Additionally, the pace of the game increases at the beginning and then stabilizes, until speeding up again after 60 seconds. So I might expect that my failure risk increases at first (which is consistent with the curvature of the cumulative probability distribution near zero) and then levels off eventually. <strong>The behavior of <span class="math">\(r(t)\)</span> determines the shape of <span class="math">\(F(t)\)</span> and therefore the shape of the tail.</strong></p>
 <p>There's no reason to assume that the failure risk <span class="math">\(r(t)\)</span> follows a power law for all times. In fact, we can derive the time-to-failure probability distribution given an arbitrary (integrable) risk function. We want to calculate <span class="math">\(F(t)\)</span>, the probability that failure has occurred before time <span class="math">\(t\)</span>. Of course this is just <span class="math">\(1−G(t)\)</span>, where <span class="math">\(G(t)\)</span> is the probability that failure has not occurred. This must be equal to the probability of failure not occurring in the interval from <span class="math">\(0\)</span> to <span class="math">\(\Delta t\)</span>, AND the probability of failure not occurring in the interval <span class="math">\(\Delta t\)</span> to <span class="math">\(2\Delta t\)</span>, etc. The failure probability in each interval is assumed to be independent, just like coin flips, so we can just multiply the probabilities of no failure in each interval. Dividing up the interval <span class="math">\((0,t)\)</span> into equal intervals of size <span class="math">\(\Delta t\)</span> and evaluating <span class="math">\(r(t)\)</span> at the center of each interval, we have</p>
 <div class="math">$$1-F(t) = (1-r(\Delta t/2)\Delta t) \cdot (1-r(\Delta t+\Delta t/2)\Delta t) \cdot ...$$</div>
@@ -164,7 +164,7 @@
 <p>If we let <span class="math">\(\Delta t\)</span> shrink to zero, the sum becomes an integral, and the argument <span class="math">\(\ln{(1-r(t))}\)</span> is approximated by its first order Taylor expansion, <span class="math">\(\ln{(1-r(\Delta t))}\approx-r(\Delta t)\)</span>. Therefore,</p>
 <div class="math">$$\ln{(1-F(t))} = -\int_0^t r(t) dt$$</div>
 <p>Now we can evaluate <span class="math">\(F(t)\)</span> for an arbitrary risk function. I'll assume that my failure risk becomes constant after 10 seconds. The cumulative probability distribution for this model is <span class="math">\(F(t)=1−e^{I_0−(t−t_c)/\mu}\)</span>, where <span class="math">\(I_0\)</span> is the value of the integral up to the cutoff point <span class="math">\(t_c=10\)</span> seconds. The fit looks like this:</p>
-<p><img alt="Piecewise model for cumulative distribution" src="http://localhost:8000/images/super-hexagon/cdf_partial.png"></p>
+<p><img alt="Piecewise model for cumulative distribution" src="https://dashdotrobot.com/images/super-hexagon/cdf_partial.png"></p>
 <p>This model also leaves out the uncertainty in the first 10 seconds of the game, which has its own statistical problems but isn't relevant to predicting long times. The new model predicts that I will have to play the game for <strong>150 days</strong>. That assumes constant gameplay without eating or sleeping. That might sound daunting, but it's a far cry from 260 billion years!</p>
 <p>Why does this matter? First, it's fun! Second, this dataset is an excellent example of how prediction of extreme events is very sensitive to how we model the <strong>tail</strong> of the probability distribution. We have to do more than selecting a model and then optimizing the goodness-of-fit. For best results, we should model the tail of the distribution with a equation which is based on the underlying phenomena we are trying to predict.</p>
 <p>Of course, in the time it took me to write this, I bet I could have gotten better at this stupid game...</p>
@@ -237,7 +237,7 @@
 
         </div>
         <div class="col-sm-3" id="sidebar">
-                <img class="img-responsive" src="http://localhost:8000//images/Matt_Ford_small.png" width=""/>
+                <img class="img-responsive" src="https://dashdotrobot.com//images/Matt_Ford_small.png" width=""/>
             <aside>
 <div id="aboutme">
     <p>
@@ -261,13 +261,13 @@
       </div>
    </div>
 </footer>
-<script src="http://localhost:8000/theme/js/jquery.min.js"></script>
+<script src="https://dashdotrobot.com/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://localhost:8000/theme/js/bootstrap.min.js"></script>
+<script src="https://dashdotrobot.com/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="http://localhost:8000/theme/js/respond.min.js"></script>
+<script src="https://dashdotrobot.com/theme/js/respond.min.js"></script>
 
     <!-- Google Analytics -->
     <script type="text/javascript">

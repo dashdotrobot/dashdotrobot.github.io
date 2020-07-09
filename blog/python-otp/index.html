@@ -9,7 +9,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:8000/blog/python-otp/">
+<link rel="canonical" href="https://dashdotrobot.com/blog/python-otp/">
 
         <meta name="author" content="Matt Ford" />
         <meta name="keywords" content="python,diversions" />
@@ -18,7 +18,7 @@
         <meta property="og:site_name" content="dashdotrobot.com" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="One-time pad encryption"/>
-        <meta property="og:url" content="http://localhost:8000/blog/python-otp/"/>
+        <meta property="og:url" content="https://dashdotrobot.com/blog/python-otp/"/>
         <meta property="og:description" content="I wrote a Python tool to implement one-time pad encryption, a theoretically &#34;perfect&#34; method common during the Cold War."/>
         <meta property="article:published_time" content="2014-01-02" />
             <meta property="article:section" content="blog" />
@@ -26,18 +26,18 @@
             <meta property="article:tag" content="diversions" />
             <meta property="article:author" content="Matt Ford" />
             <meta property="og:image"
-                  content="http://localhost:8000/images/avatar.png"/>
+                  content="https://dashdotrobot.com/images/avatar.png"/>
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://localhost:8000/theme/css/bootstrap.min.css" type="text/css"/>
+        <link rel="stylesheet" href="https://dashdotrobot.com/theme/css/bootstrap.min.css" type="text/css"/>
 
     <!-- Enable FontAwesome and AcademIcons -->
-    <link href="http://localhost:8000/theme/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://localhost:8000/theme/css/academicons.css"/>
+    <link href="https://dashdotrobot.com/theme/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://dashdotrobot.com/theme/css/academicons.css"/>
 
-    <link href="http://localhost:8000/theme/css/pygments/native.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://localhost:8000/theme/css/style.css" type="text/css"/>
+    <link href="https://dashdotrobot.com/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://dashdotrobot.com/theme/css/style.css" type="text/css"/>
 
 
 
@@ -56,19 +56,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="http://localhost:8000/" class="navbar-brand">
-<img class="img-responsive pull-left gap-right" src="http://localhost:8000//images/avatar.png" width="30px"/> dashdotrobot.com            </a>
+            <a href="https://dashdotrobot.com/" class="navbar-brand">
+<img class="img-responsive pull-left gap-right" src="https://dashdotrobot.com//images/avatar.png" width="30px"/> dashdotrobot.com            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="http://localhost:8000/curriculum-vitae/">
+                         <li><a href="https://dashdotrobot.com/curriculum-vitae/">
                              C.V.
                           </a></li>
                         <li class="active">
-                            <a href="http://localhost:8000/blog/">Blog</a>
+                            <a href="https://dashdotrobot.com/blog/">Blog</a>
                         </li>
                         <li >
-                            <a href="http://localhost:8000/projects/">Projects</a>
+                            <a href="https://dashdotrobot.com/projects/">Projects</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -90,7 +90,7 @@
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://localhost:8000/blog/python-otp/"
+                    <a href="https://dashdotrobot.com/blog/python-otp/"
                        rel="bookmark"
                        title="Permalink to One-time pad encryption">
                         One-time pad encryption
@@ -111,14 +111,14 @@
 
 
 <span class="label label-default">Tags</span>
-	<a href="http://localhost:8000/tag/python.html">python</a>
+	<a href="https://dashdotrobot.com/tag/python.html">python</a>
         /
-	<a href="http://localhost:8000/tag/diversions.html">diversions</a>
+	<a href="https://dashdotrobot.com/tag/diversions.html">diversions</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <p>One-time pad encryption is a <a href="http://en.wikipedia.org/wiki/One-time_pad">theoretically perfect</a> method for encrypting and decoding secret messages. The message is combined character-by-character by modular arithmetic with a "one-time key" which is at least as long as the message. For example, if the first character of the message is "E" (5th letter of the alphabet) and the first character of the key is "L" (12th letter of the alphabet), the first character of the cipher will be: (5+12)="Q". The one-time key is a uniformly random sequence of characters held by both the sender and receiver. Pads must be easy to conceal or destroy. <a href="http://www.ranum.com/security/computer_security/papers/otp-faq/otp.jpg">Check out this website</a> for a photo of a Russian one-time pad.</p>
-<p><img alt="Encrypted Message" src="http://localhost:8000/images/otp-pen.jpg"></p>
+<p><img alt="Encrypted Message" src="https://dashdotrobot.com/images/otp-pen.jpg"></p>
 <p>One-time pad encryption is "perfect" in the sense that as long as the key is truly random (and kept secret), the cipher gives absolutely no information about the original message, except for its maximum length. Given the cipher (but not the key), one can generate a possible key to transform the cipher into any arbitrary (intelligible) message. However, as the name suggests, each key may be used only once. If a key is used twice, the key can be broken relatively easy by making some basic assumptions about the underlying message (natural language, letter frequency, etc).</p>
 <p>Since one-time pad ciphers are completely secure without access to the key, messages can be transmitted in the open. It has been speculated that so-called "numbers stations" transmitting across the shortwave band use one-time pad cyphers. Numbers Stations were the subject of a <a href="http://99percentinvisible.org/episode/numbers-stations/">recent episode</a> of the incredible and thought-provoking independent radio program <a href="http://99percentinvisible.org/">99% Invisible</a>. Perfect data cryptography allows these stations to broadcast seemingly random streams of numbers out to secret agents, real or imagined, across the globe.</p>
 <p>If you find yourself involved in a clandestine operation, perhaps you will find my Python script useful. All you need is a text file with your one-time keys (a single file can hold as many keys as you like, see sample for details). After specifying the padfile and which key to use, the program accepts the cipher or plaintext via STDIN. Run the program with the "-h" command line option for help and examples. The script uses a 38 character cipher (A-Z,0-9,=,/) where "=" is used in place of a space (" ") and "/" is used in place of a period ("."). Any other characters will be ignored and stripped from the message.</p>
@@ -277,7 +277,7 @@
 
         </div>
         <div class="col-sm-3" id="sidebar">
-                <img class="img-responsive" src="http://localhost:8000//images/Matt_Ford_small.png" width=""/>
+                <img class="img-responsive" src="https://dashdotrobot.com//images/Matt_Ford_small.png" width=""/>
             <aside>
 <div id="aboutme">
     <p>
@@ -301,13 +301,13 @@
       </div>
    </div>
 </footer>
-<script src="http://localhost:8000/theme/js/jquery.min.js"></script>
+<script src="https://dashdotrobot.com/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://localhost:8000/theme/js/bootstrap.min.js"></script>
+<script src="https://dashdotrobot.com/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="http://localhost:8000/theme/js/respond.min.js"></script>
+<script src="https://dashdotrobot.com/theme/js/respond.min.js"></script>
 
     <!-- Google Analytics -->
     <script type="text/javascript">
