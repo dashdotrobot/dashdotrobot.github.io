@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>One-time pad encryption - dashdotrobot.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://localhost:8000/blog/python-otp/">
+
+        <meta name="author" content="Matt Ford" />
+        <meta name="keywords" content="python,diversions" />
+        <meta name="description" content="I wrote a Python tool to implement one-time pad encryption, a theoretically &#34;perfect&#34; method common during the Cold War." />
+
+        <meta property="og:site_name" content="dashdotrobot.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="One-time pad encryption"/>
+        <meta property="og:url" content="http://localhost:8000/blog/python-otp/"/>
+        <meta property="og:description" content="I wrote a Python tool to implement one-time pad encryption, a theoretically &#34;perfect&#34; method common during the Cold War."/>
+        <meta property="article:published_time" content="2014-01-02" />
+            <meta property="article:section" content="blog" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:tag" content="diversions" />
+            <meta property="article:author" content="Matt Ford" />
+            <meta property="og:image"
+                  content="http://localhost:8000/images/avatar.png"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://localhost:8000/theme/css/bootstrap.min.css" type="text/css"/>
+
+    <!-- Enable FontAwesome and AcademIcons -->
+    <link href="http://localhost:8000/theme/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://localhost:8000/theme/css/academicons.css"/>
+
+    <link href="http://localhost:8000/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://localhost:8000/theme/css/style.css" type="text/css"/>
+
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://localhost:8000/" class="navbar-brand">
+<img class="img-responsive pull-left gap-right" src="http://localhost:8000//images/avatar.png" width="30px"/> dashdotrobot.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="http://localhost:8000/curriculum-vitae/">
+                             C.V.
+                          </a></li>
+                        <li class="active">
+                            <a href="http://localhost:8000/blog/">Blog</a>
+                        </li>
+                        <li >
+                            <a href="http://localhost:8000/projects/">Projects</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                        <li><a href="http://twitter.com/dashdotrobot"><i class="fa fa-twitter-square fa-lg gap-right"></i></a></li>
+                        <li><a href="https://github.com/dashdotrobot"><i class="fa fa-github-square fa-lg gap-right"></i></a></li>
+                        <li><a href="https://scholar.google.com/citations?user=Gho4h7kAAAAJ&hl=en"><i class="ai ai-google-scholar-square ai-lg gap-right"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/matthew-ford-phd"><i class="fa fa-linkedin-square fa-lg gap-right"></i></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://localhost:8000/blog/python-otp/"
+                       rel="bookmark"
+                       title="Permalink to One-time pad encryption">
+                        One-time pad encryption
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body" id="article-info">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <time datetime="2014-01-02T00:00:00-06:00"> Thursday, January 02, 2014</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://localhost:8000/tag/python.html">python</a>
+        /
+	<a href="http://localhost:8000/tag/diversions.html">diversions</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>One-time pad encryption is a <a href="http://en.wikipedia.org/wiki/One-time_pad">theoretically perfect</a> method for encrypting and decoding secret messages. The message is combined character-by-character by modular arithmetic with a "one-time key" which is at least as long as the message. For example, if the first character of the message is "E" (5th letter of the alphabet) and the first character of the key is "L" (12th letter of the alphabet), the first character of the cipher will be: (5+12)="Q". The one-time key is a uniformly random sequence of characters held by both the sender and receiver. Pads must be easy to conceal or destroy. <a href="http://www.ranum.com/security/computer_security/papers/otp-faq/otp.jpg">Check out this website</a> for a photo of a Russian one-time pad.</p>
+<p><img alt="Encrypted Message" src="http://localhost:8000/images/otp-pen.jpg"></p>
+<p>One-time pad encryption is "perfect" in the sense that as long as the key is truly random (and kept secret), the cipher gives absolutely no information about the original message, except for its maximum length. Given the cipher (but not the key), one can generate a possible key to transform the cipher into any arbitrary (intelligible) message. However, as the name suggests, each key may be used only once. If a key is used twice, the key can be broken relatively easy by making some basic assumptions about the underlying message (natural language, letter frequency, etc).</p>
+<p>Since one-time pad ciphers are completely secure without access to the key, messages can be transmitted in the open. It has been speculated that so-called "numbers stations" transmitting across the shortwave band use one-time pad cyphers. Numbers Stations were the subject of a <a href="http://99percentinvisible.org/episode/numbers-stations/">recent episode</a> of the incredible and thought-provoking independent radio program <a href="http://99percentinvisible.org/">99% Invisible</a>. Perfect data cryptography allows these stations to broadcast seemingly random streams of numbers out to secret agents, real or imagined, across the globe.</p>
+<p>If you find yourself involved in a clandestine operation, perhaps you will find my Python script useful. All you need is a text file with your one-time keys (a single file can hold as many keys as you like, see sample for details). After specifying the padfile and which key to use, the program accepts the cipher or plaintext via STDIN. Run the program with the "-h" command line option for help and examples. The script uses a 38 character cipher (A-Z,0-9,=,/) where "=" is used in place of a space (" ") and "/" is used in place of a period ("."). Any other characters will be ignored and stripped from the message.</p>
+<h3>Python script</h3>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="c1">#################################</span>
+<span class="c1"># Parse command line arguments</span>
+<span class="c1">#################################</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;Encrypt or decrypt text using a one-time pad cipher.</span>
+
+<span class="s1">EXAMPLES:</span>
+<span class="s1">  ./padcipher.py -p pad -k key -t plaintext.txt &gt; cipher.txt</span>
+<span class="s1">  ./padcipher.py -p pad -k key &lt; plaintext.txt &gt; cipher.txt</span>
+<span class="s1">  cat cipher.txt | ./padcipher.py -p pad -k key -d &gt; plaintext.txt&#39;&#39;&#39;</span><span class="p">,</span><span class="n">epilog</span><span class="o">=</span><span class="s1">&#39;If no input is supplied you can enter your message directly on the command line. Press RETURN then CTRL+D when done.&#39;</span><span class="p">,</span><span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">RawDescriptionHelpFormatter</span><span class="p">)</span>
+
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-p&#39;</span><span class="p">,</span><span class="s1">&#39;--padfile&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;file containing keys (one-time pad)&#39;</span><span class="p">,</span>
+                    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-k&#39;</span><span class="p">,</span><span class="s1">&#39;--keyname&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;name of the specific key to use&#39;</span><span class="p">,</span>
+                    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-d&#39;</span><span class="p">,</span><span class="s1">&#39;--decrypt&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_const&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;direction&#39;</span><span class="p">,</span><span class="n">const</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">,</span>
+                    <span class="n">default</span><span class="o">=</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;encrypt the input text (default: encrypt)&#39;</span><span class="p">)</span>
+
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-t&#39;</span><span class="p">,</span><span class="s1">&#39;--text&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;file containing the text to be either encrypted or decrypted (the plaintext or the cipher)&#39;</span><span class="p">)</span>
+
+<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+<span class="c1"># Try to load the key file</span>
+<span class="n">pf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">padfile</span><span class="p">)</span>
+
+<span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">foundKey</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">while</span> <span class="ow">not</span> <span class="n">foundKey</span><span class="p">:</span>
+
+    <span class="n">line</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="s2">&quot;ERROR: Pad not found in key file&quot;</span>
+        <span class="n">pf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;#&#39;</span> <span class="ow">and</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="n">args</span><span class="o">.</span><span class="n">keyname</span><span class="p">:</span>
+        <span class="n">foundKey</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+            <span class="n">line</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">line</span> <span class="ow">and</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;#&quot;</span><span class="p">:</span>
+                <span class="n">key</span> <span class="o">=</span> <span class="n">key</span> <span class="o">+</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">break</span>
+
+<span class="n">pf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+
+<span class="c1"># Check to see if a text file was specified</span>
+<span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span>
+<span class="c1">#    print &quot;Enter your message (Press RETURN then CTRL+D when done):&quot;</span>
+
+<span class="n">inText</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># Check if the message is too long</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">inText</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="s2">&quot;ERROR: Message is longer than key&quot;</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+
+<span class="n">charMap</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789=/&quot;</span>
+
+<span class="c1"># Preprocess text</span>
+<span class="n">inText</span> <span class="o">=</span> <span class="n">inText</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span>
+    <span class="c1"># Convert spaces to &#39;=&#39; and periods to &#39;/&#39;</span>
+    <span class="n">inText</span> <span class="o">=</span> <span class="n">inText</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
+    <span class="n">inText</span> <span class="o">=</span> <span class="n">inText</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">inText</span> <span class="o">=</span> <span class="n">inText</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Apply one-time pad cipher</span>
+<span class="n">outText</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span>
+    <span class="n">sgn</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">sgn</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">inText</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">charMap</span><span class="p">:</span>
+        <span class="n">outCharNum</span> <span class="o">=</span> <span class="p">(</span><span class="n">charMap</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">+</span> <span class="n">sgn</span><span class="o">*</span><span class="n">charMap</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">charMap</span><span class="p">)</span>
+        <span class="n">outText</span> <span class="o">+=</span> <span class="n">charMap</span><span class="p">[</span><span class="n">outCharNum</span><span class="p">]</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># Postprocess text</span>
+<span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span>
+    <span class="c1"># Convert &#39;=&#39; to space and &#39;/&#39; to period</span>
+    <span class="n">outText</span> <span class="o">=</span> <span class="n">outText</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="n">outText</span> <span class="o">=</span> <span class="n">outText</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="n">outText</span>
+</code></pre></div>
+
+
+<h3>Sample key file:</h3>
+<div class="highlight"><pre><span></span><code><span class="o">#</span><span class="n">K1</span>
+<span class="o">=</span><span class="n">K2KV</span> <span class="mi">3</span><span class="n">POH3</span> <span class="n">OUQR1</span>
+<span class="n">E</span><span class="o">/</span><span class="n">FGS</span> <span class="n">C00SD</span> <span class="n">B7QMW</span>
+<span class="n">Y8UD</span><span class="o">=</span> <span class="n">O</span><span class="o">/</span><span class="mi">671</span> <span class="n">QKHNO</span>
+<span class="n">JSW49</span> <span class="n">ZZGRU</span> <span class="mi">8</span><span class="n">EG00</span>
+<span class="n">TKETS</span> <span class="n">WPYAH</span> <span class="mi">0</span><span class="n">TJEP</span>
+<span class="n">R8S5K</span> <span class="n">THVPO</span> <span class="n">LQWBN</span>
+<span class="n">XN1MK</span> <span class="mi">3</span><span class="n">OB0T</span> <span class="n">YUFNZ</span>
+<span class="n">NA</span><span class="o">=</span><span class="n">X9</span> <span class="n">M1ILO</span> <span class="mi">00</span><span class="o">/</span><span class="n">E</span><span class="o">/</span>
+<span class="o">/</span><span class="mi">31</span><span class="n">G1</span> <span class="mi">7</span><span class="n">U0A1</span> <span class="mi">4</span><span class="n">FNOT</span>
+
+<span class="o">#</span><span class="n">K2</span>
+<span class="n">YC359</span> <span class="o">/</span><span class="n">U9KX</span> <span class="mi">8</span><span class="n">X6Y7</span>
+<span class="n">V3PD6</span> <span class="n">H2D7S</span> <span class="mi">6</span><span class="n">ZYYZ</span>
+<span class="mi">44</span><span class="n">HG8</span> <span class="mi">5</span><span class="n">UPKN</span> <span class="o">=</span><span class="n">ETUK</span>
+<span class="mi">534</span><span class="n">WU</span> <span class="n">QJ1BT</span> <span class="n">E2X58</span>
+<span class="n">SLLQR</span> <span class="mi">307</span><span class="n">KD</span> <span class="n">SPMDC</span>
+<span class="mi">5</span><span class="n">PJ4G</span> <span class="n">AYJYB</span> <span class="n">AFK0L</span>
+<span class="mi">8</span><span class="n">BKE2</span> <span class="n">N8VLY</span> <span class="n">KG5V</span><span class="o">=</span>
+<span class="mi">7</span><span class="n">I2U</span><span class="o">=</span> <span class="mi">5</span><span class="n">JBJ6</span> <span class="mi">4597</span><span class="n">O</span>
+<span class="n">R1WBN</span> <span class="n">XJ0M8</span> <span class="mi">1</span><span class="n">S9PY</span>
+
+<span class="o">#</span><span class="n">K3</span>
+<span class="mi">1</span><span class="n">IPI7</span> <span class="mi">42</span><span class="n">LSU</span> <span class="n">DYUI1</span>
+<span class="n">ZGU35</span> <span class="n">ME59A</span> <span class="n">DGPOZ</span>
+<span class="n">OVNHP</span> <span class="n">VT8W4</span> <span class="o">=</span><span class="n">HP6B</span>
+<span class="mi">2</span><span class="n">IS12</span> <span class="n">M7E9Q</span> <span class="mi">9</span><span class="n">E269</span>
+<span class="n">TKW3E</span> <span class="n">HPTTF</span> <span class="n">GVCTF</span>
+<span class="n">OXSGZ</span> <span class="n">JQU9M</span> <span class="n">B2REU</span>
+<span class="mi">7</span><span class="o">=</span><span class="mi">7</span><span class="n">W9</span> <span class="n">F55VS</span> <span class="n">YNW51</span>
+<span class="n">LHMZ6</span> <span class="n">KG524</span> <span class="n">MURYE</span>
+<span class="o">=</span><span class="n">SBK</span><span class="o">=</span> <span class="n">LWNJB</span> <span class="n">XC4JM</span>
+</code></pre></div>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+                <img class="img-responsive" src="http://localhost:8000//images/Matt_Ford_small.png" width=""/>
+            <aside>
+<div id="aboutme">
+    <p>
+        My name is <strong>Matt Ford</strong>. I'm currently a postdoc working on active learning in
+			 mechanical engineering at Cornell University. I received my Ph.D. from Northwestern University
+             in Mechanical Engineering for my work on the mechanics of the bicycle wheel.
+    </p>
+</div>            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2019 Matt Ford
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://localhost:8000/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://localhost:8000/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://localhost:8000/theme/js/respond.min.js"></script>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-63010494-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+</body>
+</html>

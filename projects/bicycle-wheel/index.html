@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Mechanics of the bicycle wheel - dashdotrobot.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://localhost:8000/projects/bicycle-wheel/">
+
+        <meta name="author" content="Matt Ford" />
+        <meta name="description" content="The bicycle wheel hasn&#39;t changed much since the 1870s. In my Ph.D. thesis, I explore some of the science that keeps this 140-year-old invention rolling." />
+
+        <meta property="og:site_name" content="dashdotrobot.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Mechanics of the bicycle wheel"/>
+        <meta property="og:url" content="http://localhost:8000/projects/bicycle-wheel/"/>
+        <meta property="og:description" content="The bicycle wheel hasn&#39;t changed much since the 1870s. In my Ph.D. thesis, I explore some of the science that keeps this 140-year-old invention rolling."/>
+        <meta property="article:published_time" content="2016-01-01" />
+            <meta property="article:section" content="projects" />
+            <meta property="article:author" content="Matt Ford" />
+            <meta property="og:image"
+                  content="http://localhost:8000/images/avatar.png"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://localhost:8000/theme/css/bootstrap.min.css" type="text/css"/>
+
+    <!-- Enable FontAwesome and AcademIcons -->
+    <link href="http://localhost:8000/theme/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://localhost:8000/theme/css/academicons.css"/>
+
+    <link href="http://localhost:8000/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://localhost:8000/theme/css/style.css" type="text/css"/>
+
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://localhost:8000/" class="navbar-brand">
+<img class="img-responsive pull-left gap-right" src="http://localhost:8000//images/avatar.png" width="30px"/> dashdotrobot.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="http://localhost:8000/curriculum-vitae/">
+                             C.V.
+                          </a></li>
+                        <li >
+                            <a href="http://localhost:8000/blog/">Blog</a>
+                        </li>
+                        <li class="active">
+                            <a href="http://localhost:8000/projects/">Projects</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                        <li><a href="http://twitter.com/dashdotrobot"><i class="fa fa-twitter-square fa-lg gap-right"></i></a></li>
+                        <li><a href="https://github.com/dashdotrobot"><i class="fa fa-github-square fa-lg gap-right"></i></a></li>
+                        <li><a href="https://scholar.google.com/citations?user=Gho4h7kAAAAJ&hl=en"><i class="ai ai-google-scholar-square ai-lg gap-right"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/matthew-ford-phd"><i class="fa fa-linkedin-square fa-lg gap-right"></i></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://localhost:8000/projects/bicycle-wheel/"
+                       rel="bookmark"
+                       title="Permalink to Mechanics of the bicycle wheel">
+                        Mechanics of the bicycle wheel
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body" id="article-info">
+<footer class="post-info">
+
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>The tension-spoked bicycle wheel has endured for over 140 years due to its simplicity and elegance. In the days of the "ordinary" or "high-wheel" the bicycle was practically just one huge wheel with a slender frame and saddle. Although materials and manufacturing techniques have continued to envolve, the central design of the wheel has not significantly changed since the 1870s.</p>
+<p>Despite its age, the bicycle wheel still poses many unanswered questions: what makes a wheel strong? How and why do wheels fail? What is the ideal strength of the wheel? I aim to answer these questions through the lens of engineering mechanics and mathematical modeling.</p>
+<hr/>
+
+<h3>Read my Ph.D. Thesis:</h3>
+<p><a href="https://github.com/dashdotrobot/phd-thesis/releases/download/v1.0/Ford_BicycleWheelThesis_v1.0.pdf"><em>Reinventing the Wheel: Stress Analysis, Stability, and Optimization of the Bicycle Wheel</em></a>
+<hr/></p>
+<h2>Optimizing spoke tension</h2>
+<p>If the spokes of a bicycle wheel tensioned beyond a safe limit, the wheel can spontaneously collapse into a taco shape without applying any external forces. Exploiting an analogy with the classical beam-on-elastic-foundation problem, we've developed a <a href="https://figshare.com/articles/Buckling_of_the_Bicycle_Wheel/3856134">mathematical model</a> which predicts the critical spoke tension.</p>
+<p><img alt="Buckling under tension" src="http://localhost:8000/images/project-pages/tension_racing700_3s_alt.gif"></p>
+<p>The key parameter controlling the maximum safe tension is the ratio between rim bending stiffness and twisting stiffness. The lower of the two stiffnesses controls the overall strength and stiffness of the wheel. Thus a single-wall rim (which is very flexible in twisting) will buckle much more easily than a double-wall rim (which has more equal bending and twisting stiffness).</p>
+<h2>Strength of the bicycle wheel</h2>
+<p>Bicycle wheels can buckle (or taco) during use when the applied radial load (weight of the bike and rider) exceeds the wheel strength. The failure load is generally only reached after the spokes at the bottom of the wheel have completely lost tension and gone slack under the applied load. Therefore, the behavior of the wheel becomes nonlinear prior to failure, making an analytical solution next-to-impossible.</p>
+<p><img alt="Buckling under radial load" src="http://localhost:8000/images/project-pages/radial_racing700_3s_alt.gif"></p>
+<p>However, we have derived a <a href="http://dx.doi.org/10.6084/m9.figshare.5404960">simplified model for the strength of the wheel</a> by considering the competition between two failure modes: (1) spoke buckling and (2) rim buckling. Increasing the spoke tension increases the spoke buckling load (because it has to lose more tension before it goes slack), but decreases the rim buckling load (because higher spoke tension leads to a lower lateral wheel stiffness).</p>
+<p><img alt="Wheel strength predictions" src="http://localhost:8000/images/project-pages/ICSC_2017_figures-04.png"></p>
+<p>In most cases, the model accurately predicts the average strength of the wheel, as calculated from nonlinear finite-element analysis (FEA). The horizontal spread of the data in the figure above reflects the fact that the wheel strength depends slightly on spoke tension. Additionally, since the <em>post</em>buckling behavior of wheels is unstable, the peak load is somewhat sensitive to imperfections.</p>
+<h2>Finite-element simulations for wheels</h2>
+<p>I wrote <a href="https://github.com/dashdotrobot/bike-wheel-fem">bikewheelcalc</a> in Python to simulate the mechanical response of a bicycle wheel to different loads. This program can be used to calculate the stiffness (along different directions), rim stresses, and change in spoke tensions for wheels with custom geometries, materials, or lacing patterns. I hope it can be useful to wheelbuilders and mechanics in designing wheels or selecting components, or to students learning about finite-element simulation and stress analysis.</p>
+<p>See my <a href="http://localhost:8000/articles/blog/bicycle-wheel-stiffness.md">previous post</a> for an example of calculating wheel stiffness using <strong>bikewheelcalc</strong></p>
+<canvas id="chart_rot"></canvas>
+
+<h2>Publications &amp; presentations</h2>
+<p><strong>M. Ford</strong>, P. Peng, O. Balogun. <a href="https://dx.doi.org/10.1007/s10921-018-0471-7">Acoustic Modal Testing of Bicycle Rims</a>, <em>Journal of Nondestructive Evaluation</em>, 2018 (37) 16 (<a href="http://localhost:8000/pdfs/JNDE_2018_manuscript.pdf">accepted manuscript</a>, <a href="http://localhost:8000/pdfs/JNDE_2018_ESM.pdf">electronic supporting material</a>, <a href="https://rdcu.be/GPFI">read online</a>)</p>
+<p><strong>M. Ford</strong> and O. Balogun, <a href="https://figshare.com/articles/Analytical_Model_for_the_Radial_Strength_and_Collapse_of_the_Bicycle_Wheel/5404960">"Analytical Model for the Radial Strength and Collapse of the Bicycle Wheel"</a>, International Cycling Safety Conference 2017, Davis, CA. <a href="https://figshare.com/articles/Analytical_Model_for_the_Radial_Strength_and_Collapse_of_the_Bicycle_Wheel/5464426">(Presentation Slides)</a></p>
+<p><strong>M. Ford</strong>, J.M. Papadopoulos, and O. Balogun, <a href="https://dx.doi.org/10.6084/m9.figshare.3856134">"Buckling of the bicycle wheel"</a>, Proceedings of the 2016 Bicycle and Motorcycle Dynamics Conference.</p>
+<h2>Media mentions</h2>
+<p><a href="http://www.bicycling.com/culture/science/this-professors-bike-experiments-might-change-the-way-you-ride">Bicycling Magazine</a> - This Professor’s Bike Experiments Might Change the Way You Ride</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+                <img class="img-responsive" src="http://localhost:8000//images/Matt_Ford_small.png" width=""/>
+            <aside>
+<div id="aboutme">
+    <p>
+        My name is <strong>Matt Ford</strong>. I'm currently a postdoc working on active learning in
+			 mechanical engineering at Cornell University. I received my Ph.D. from Northwestern University
+             in Mechanical Engineering for my work on the mechanics of the bicycle wheel.
+    </p>
+</div>            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2019 Matt Ford
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://localhost:8000/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://localhost:8000/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://localhost:8000/theme/js/respond.min.js"></script>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-63010494-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+</body>
+<script src="http://localhost:8000/js/Chart.min.js"></script>
+<script src="http://localhost:8000/js/charts_wheel_stiff.js"></script>
+</html>
