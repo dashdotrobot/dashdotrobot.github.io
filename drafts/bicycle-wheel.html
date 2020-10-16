@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-63010494-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-63010494-2');
+  </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+  <!-- Page-specific stylesheets -->
+  <link href="https://dashdotrobot.com/theme/css/style.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://dashdotrobot.com/theme/css/academicons.css"/>
+
+  <title>dashdotrobot.com - Mechanics of the bicycle wheel</title>
+  <meta property="og:site_name" content="dashdotrobot.com" />
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="Mechanics of the bicycle wheel"/>
+  <meta property="og:url" content="https://dashdotrobot.com/drafts/bicycle-wheel.html"/>
+  <meta property="og:description" content="The bicycle wheel hasn&#39;t changed much since the 1870s. In my Ph.D. thesis, I explore some of the science that keeps this 140-year-old invention rolling."/>
+  <meta property="article:published_time" content="2016-01-01" />
+      <meta property="article:section" content="projects" />
+      <meta property="article:author" content="Matt Ford" />
+      <meta property="og:image"
+            content="https://dashdotrobot.com/images/featured/bicycle-wheel.png"/>
+
+
+
+</head>
+
+<body id="index" class="home">
+
+  <nav class="navbar navbar-expand-md sticky-top navbar-dark bg-accent">
+    <div class="container">
+    <a class="navbar-brand" href="https://dashdotrobot.com/">
+<img class="d-inline-block align-top" src="https://dashdotrobot.com//images/site/avatar-light.png" width="30px"/>       dashdotrobot.com 
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+
+        <!-- Menu items -->
+
+        <!-- Pages -->
+        <li class="nav-item"><a class="nav-link" href="https://dashdotrobot.com/curriculum-vitae/">C.V.</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://dashdotrobot.com/projects/">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://dashdotrobot.com/teaching/">Teaching</a></li>
+
+        <!-- Article categories -->
+        <li class="nav-item">
+          <a class="nav-link" href="https://dashdotrobot.com/blog/">Blog</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item mx-1"><a class="nav-link" href="http://twitter.com/dashdotrobot" target="_blank"><i class="fab fa-twitter-square fa-lg icon"></i> <span class="d-md-none">Twitter</span></a></li>
+        <li class="nav-item mx-1"><a class="nav-link" href="https://github.com/dashdotrobot" target="_blank"><i class="fab fa-github-square fa-lg icon"></i> <span class="d-md-none">GitHub</span></a></li>
+        <li class="nav-item mx-1"><a class="nav-link" href="https://scholar.google.com/citations?user=Gho4h7kAAAAJ&hl=en" target="_blank"><i class="ai ai-google-scholar-square ai-lg icon"></i> <span class="d-md-none">Google Scholar</span></a></li>
+        <li class="nav-item mx-1"><a class="nav-link" href="https://www.linkedin.com/in/matthew-ford-phd" target="_blank"><i class="fab fa-linkedin fa-lg icon"></i> <span class="d-md-none">LinkedIn</span></a></li>
+      </ul>
+
+    </div>
+    </div>
+  </nav>
+
+
+<div class="container main-content">
+  <div class="row">
+    <div class="col-md-9">
+
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="https://dashdotrobot.com/drafts/bicycle-wheel.html" rel="bookmark"
+         title="Permalink to Mechanics of the bicycle wheel">Mechanics of the bicycle wheel</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <small><time class="published" datetime="2016-01-01T00:00:00-06:00">
+      Friday, January 01, 2016
+    </time></small>
+    <address class="vcard author">
+      <small>By           <a class="url fn" href="https://dashdotrobot.com/author/matt-ford.html">Matt Ford</a>
+</small>
+    </address>
+    <!-- <div class="category"> -->
+        <!-- Category: <a href="https://dashdotrobot.com/projects/">projects</a> -->
+    <!-- </div> -->
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>The tension-spoked bicycle wheel has endured for over 140 years due to its simplicity and elegance. In the days of the "ordinary" or "high-wheel" the bicycle was practically just one huge wheel with a slender frame and saddle. Although materials and manufacturing techniques have continued to envolve, the central design of the wheel has not significantly changed since the 1870s.</p>
+<p>Despite its age, the bicycle wheel still poses many unanswered questions: what makes a wheel strong? How and why do wheels fail? What is the ideal strength of the wheel? I aim to answer these questions through the lens of engineering mechanics and mathematical modeling.</p>
+<hr/>
+
+<h3 id="read-my-phd-thesis">Read my Ph.D. Thesis:</h3>
+<p><a href="https://github.com/dashdotrobot/phd-thesis/releases/download/v1.0/Ford_BicycleWheelThesis_v1.0.pdf"><em>Reinventing the Wheel: Stress Analysis, Stability, and Optimization of the Bicycle Wheel</em></a>
+<hr/></p>
+<h2 id="optimizing-spoke-tension">Optimizing spoke tension</h2>
+<p>If the spokes of a bicycle wheel tensioned beyond a safe limit, the wheel can spontaneously collapse into a taco shape without applying any external forces. Exploiting an analogy with the classical beam-on-elastic-foundation problem, we've developed a <a href="https://figshare.com/articles/Buckling_of_the_Bicycle_Wheel/3856134">mathematical model</a> which predicts the critical spoke tension.</p>
+<p><img alt="Buckling under tension" src="https://dashdotrobot.com/images/projects/tension_racing700_3s_alt.gif" /></p>
+<p>The key parameter controlling the maximum safe tension is the ratio between rim bending stiffness and twisting stiffness. The lower of the two stiffnesses controls the overall strength and stiffness of the wheel. Thus a single-wall rim (which is very flexible in twisting) will buckle much more easily than a double-wall rim (which has more equal bending and twisting stiffness).</p>
+<h2 id="strength-of-the-bicycle-wheel">Strength of the bicycle wheel</h2>
+<p>Bicycle wheels can buckle (or taco) during use when the applied radial load (weight of the bike and rider) exceeds the wheel strength. The failure load is generally only reached after the spokes at the bottom of the wheel have completely lost tension and gone slack under the applied load. Therefore, the behavior of the wheel becomes nonlinear prior to failure, making an analytical solution next-to-impossible.</p>
+<p><img alt="Buckling under radial load" src="https://dashdotrobot.com/images/projects/radial_racing700_3s_alt.gif" /></p>
+<p>However, we have derived a <a href="http://dx.doi.org/10.6084/m9.figshare.5404960">simplified model for the strength of the wheel</a> by considering the competition between two failure modes: (1) spoke buckling and (2) rim buckling. Increasing the spoke tension increases the spoke buckling load (because it has to lose more tension before it goes slack), but decreases the rim buckling load (because higher spoke tension leads to a lower lateral wheel stiffness).</p>
+<p><img alt="Wheel strength predictions" src="https://dashdotrobot.com/images/projects/ICSC_2017_figures-04.png" /></p>
+<p>In most cases, the model accurately predicts the average strength of the wheel, as calculated from nonlinear finite-element analysis (FEA). The horizontal spread of the data in the figure above reflects the fact that the wheel strength depends slightly on spoke tension. Additionally, since the <em>post</em>buckling behavior of wheels is unstable, the peak load is somewhat sensitive to imperfections.</p>
+<h2 id="finite-element-simulations-for-wheels">Finite-element simulations for wheels</h2>
+<p>I wrote <a href="https://github.com/dashdotrobot/bike-wheel-fem">bikewheelcalc</a> in Python to simulate the mechanical response of a bicycle wheel to different loads. This program can be used to calculate the stiffness (along different directions), rim stresses, and change in spoke tensions for wheels with custom geometries, materials, or lacing patterns. I hope it can be useful to wheelbuilders and mechanics in designing wheels or selecting components, or to students learning about finite-element simulation and stress analysis.</p>
+<p>See my <a href="https://dashdotrobot.com/articles/blog/bicycle-wheel-stiffness.md">previous post</a> for an example of calculating wheel stiffness using <strong>bikewheelcalc</strong></p>
+<canvas id="chart_rot"></canvas>
+
+<h2 id="publications-presentations">Publications &amp; presentations</h2>
+<p><strong>M. Ford</strong>, P. Peng, O. Balogun. <a href="https://dx.doi.org/10.1007/s10921-018-0471-7">Acoustic Modal Testing of Bicycle Rims</a>, <em>Journal of Nondestructive Evaluation</em>, 2018 (37) 16 (<a href="https://dashdotrobot.com/pdfs/JNDE_2018_manuscript.pdf">accepted manuscript</a>, <a href="https://dashdotrobot.com/pdfs/JNDE_2018_ESM.pdf">electronic supporting material</a>, <a href="https://rdcu.be/GPFI">read online</a>)</p>
+<p><strong>M. Ford</strong> and O. Balogun, <a href="https://figshare.com/articles/Analytical_Model_for_the_Radial_Strength_and_Collapse_of_the_Bicycle_Wheel/5404960">"Analytical Model for the Radial Strength and Collapse of the Bicycle Wheel"</a>, International Cycling Safety Conference 2017, Davis, CA. <a href="https://figshare.com/articles/Analytical_Model_for_the_Radial_Strength_and_Collapse_of_the_Bicycle_Wheel/5464426">(Presentation Slides)</a></p>
+<p><strong>M. Ford</strong>, J.M. Papadopoulos, and O. Balogun, <a href="https://dx.doi.org/10.6084/m9.figshare.3856134">"Buckling of the bicycle wheel"</a>, Proceedings of the 2016 Bicycle and Motorcycle Dynamics Conference.</p>
+<h2 id="media-mentions">Media mentions</h2>
+<p><a href="http://www.bicycling.com/culture/science/this-professors-bike-experiments-might-change-the-way-you-ride">Bicycling Magazine</a> - This Professor’s Bike Experiments Might Change the Way You Ride</p>
+  </div><!-- /.entry-content -->
+</section>
+
+</div>
+
+    <div class="col-md-3" id="sidebar">
+      <div class="d-md-none py-3"><h3 class="text-center text-secondary">...</h3></div>
+      <div class="card border-left">
+        <img class="img-fluid" src="/images/site/Matt_Ford_small.png">
+        <div class="card-body p-2">
+          <p class="m-0"><small>My name is <strong>Matt Ford</strong>. I'm currently a postdoc working on active learning in
+			 mechanical engineering at Cornell University. I received my Ph.D. from Northwestern University
+             in Mechanical Engineering for my work on the mechanics of the bicycle wheel.</small></p>
+        </div>
+      </div>
+    </div>
+
+<footer>
+<div class="container-fluid text-center py-3">
+  <small>&copy; 2020 <a href="http://dashdotrobot.com" target="_blank">Matthew Ford</a>.
+    Powered by <a href="https://getpelican.com" target="_blank">Pelican</a> and <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>.
+  </small>
+</div>
+</footer>
+
+<!-- Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+<script src="https://dashdotrobot.com/js/Chart.min.js"></script>
+<script src="https://dashdotrobot.com/js/charts_wheel_stiff.js"></script>
+
+
+</body>
+</html>

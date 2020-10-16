@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-63010494-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-63010494-2');
+  </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+  <!-- Page-specific stylesheets -->
+  <link href="https://dashdotrobot.com/theme/css/style.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://dashdotrobot.com/theme/css/academicons.css"/>
+
+  <title>dashdotrobot.com - Dynamic near-field optical scanning microscopy</title>
+  <meta property="og:site_name" content="dashdotrobot.com" />
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="Dynamic near-field optical scanning microscopy"/>
+  <meta property="og:url" content="https://dashdotrobot.com/drafts/nsom.html"/>
+  <meta property="og:description" content="Optical microscopy is limited by the wavelength of light. But today&#39;s nano devices have features under 10 nanometers, orders of magnitude smaller than the wavelength of visible light! Scanning probe microscopy breaks this limit by using specially fabricated nanoprobes which use mechanical forces to map out feature topography or other …"/>
+  <meta property="article:published_time" content="2015-01-01" />
+      <meta property="article:section" content="projects" />
+      <meta property="article:author" content="Matt Ford" />
+      <meta property="og:image"
+            content="https://dashdotrobot.com/images/featured/nsom.png"/>
+
+
+
+</head>
+
+<body id="index" class="home">
+
+  <nav class="navbar navbar-expand-md sticky-top navbar-dark bg-accent">
+    <div class="container">
+    <a class="navbar-brand" href="https://dashdotrobot.com/">
+<img class="d-inline-block align-top" src="https://dashdotrobot.com//images/site/avatar-light.png" width="30px"/>       dashdotrobot.com 
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+
+        <!-- Menu items -->
+
+        <!-- Pages -->
+        <li class="nav-item"><a class="nav-link" href="https://dashdotrobot.com/curriculum-vitae/">C.V.</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://dashdotrobot.com/projects/">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://dashdotrobot.com/teaching/">Teaching</a></li>
+
+        <!-- Article categories -->
+        <li class="nav-item">
+          <a class="nav-link" href="https://dashdotrobot.com/blog/">Blog</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item mx-1"><a class="nav-link" href="http://twitter.com/dashdotrobot" target="_blank"><i class="fab fa-twitter-square fa-lg icon"></i> <span class="d-md-none">Twitter</span></a></li>
+        <li class="nav-item mx-1"><a class="nav-link" href="https://github.com/dashdotrobot" target="_blank"><i class="fab fa-github-square fa-lg icon"></i> <span class="d-md-none">GitHub</span></a></li>
+        <li class="nav-item mx-1"><a class="nav-link" href="https://scholar.google.com/citations?user=Gho4h7kAAAAJ&hl=en" target="_blank"><i class="ai ai-google-scholar-square ai-lg icon"></i> <span class="d-md-none">Google Scholar</span></a></li>
+        <li class="nav-item mx-1"><a class="nav-link" href="https://www.linkedin.com/in/matthew-ford-phd" target="_blank"><i class="fab fa-linkedin fa-lg icon"></i> <span class="d-md-none">LinkedIn</span></a></li>
+      </ul>
+
+    </div>
+    </div>
+  </nav>
+
+
+<div class="container main-content">
+  <div class="row">
+    <div class="col-md-9">
+
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="https://dashdotrobot.com/drafts/nsom.html" rel="bookmark"
+         title="Permalink to Dynamic near-field optical scanning microscopy">Dynamic near-field optical scanning microscopy</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <small><time class="published" datetime="2015-01-01T00:00:00-06:00">
+      Thursday, January 01, 2015
+    </time></small>
+    <address class="vcard author">
+      <small>By           <a class="url fn" href="https://dashdotrobot.com/author/matt-ford.html">Matt Ford</a>
+</small>
+    </address>
+    <!-- <div class="category"> -->
+        <!-- Category: <a href="https://dashdotrobot.com/projects/">projects</a> -->
+    <!-- </div> -->
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>Optical microscopy is limited by the wavelength of light. But today's nano devices have features under 10 nanometers, orders of magnitude smaller than the wavelength of visible light! Scanning probe microscopy breaks this limit by using specially fabricated nanoprobes which use mechanical forces to map out feature topography or other properties.</p>
+<p>Near-field scanning optical microscopy (NSOM) combines an optical probe with a mechanical probe by using a sharp metal tip as an "optical antenna," which focuses a far-field laser source to a sub-wavelength hotspot.</p>
+<p><img alt="nsom" src="https://dashdotrobot.com/images/projects/nsom.png" /></p>
+<p>We use this optical hotspot as a dynamic probe to measure mechanical vibrations. We are able to measure vibrations less than one picometer with a spatial resolution of just a few nanometers. This sensitive tool can be used to probe graphene devices, carbon nanotube resonators, or complex MEMS devices.</p>
+<p>I analyzed the sensitivity of our probe with a computational Monte-Carlo simulation to account for different sources of noise. The model matched closely with our experimental predictions: we achieved a noise-limited sensitivity of 0.45 <span class="math">\(pm/Hz^{1/2}\)</span>, as opposed to our theoretical prediction of 0.4 <span class="math">\(pm/Hz^{1/2}\)</span>. Based on our simulation, there is a fundamental sensitivity limit of 0.05 <span class="math">\(pm/Hz^{1/2}\)</span> due to thermal vibrations of the cantilever at room temperature, so the technique is currently limited by noise in the photodetector used to record the light signal.</p>
+<h2 id="publications">Publications</h2>
+<p>Ahn, X. Chen, Z. Zhang, <strong>M. Ford</strong>, D. Rosenmann, I. W. Jung, C. Sun, and O. Balogun. <a href="http://doi.org/10.1038/srep10058">Dynamic near-field optical interaction between oscillating nanomechanical structures</a>, <em>Scientific Reports</em> 5, 10058 (2015)</p>
+<h3 id="complete-list-of-publications"><a href="https://dashdotrobot.com/curriculum-vitae/">Complete list of publications</a></h3>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  </div><!-- /.entry-content -->
+</section>
+
+</div>
+
+    <div class="col-md-3" id="sidebar">
+      <div class="d-md-none py-3"><h3 class="text-center text-secondary">...</h3></div>
+      <div class="card border-left">
+        <img class="img-fluid" src="/images/site/Matt_Ford_small.png">
+        <div class="card-body p-2">
+          <p class="m-0"><small>My name is <strong>Matt Ford</strong>. I'm currently a postdoc working on active learning in
+			 mechanical engineering at Cornell University. I received my Ph.D. from Northwestern University
+             in Mechanical Engineering for my work on the mechanics of the bicycle wheel.</small></p>
+        </div>
+      </div>
+    </div>
+
+<footer>
+<div class="container-fluid text-center py-3">
+  <small>&copy; 2020 <a href="http://dashdotrobot.com" target="_blank">Matthew Ford</a>.
+    Powered by <a href="https://getpelican.com" target="_blank">Pelican</a> and <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>.
+  </small>
+</div>
+</footer>
+
+<!-- Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>
