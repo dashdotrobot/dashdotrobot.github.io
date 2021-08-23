@@ -3,7 +3,7 @@
 blockquote {
   padding: 0 1em;
   color: #6a737d;
-  border-left: 0.25em solid #dfe2e5;
+  border-left: 0.25em solid #b7a57a;
 }
 
 .main-content {
@@ -25,19 +25,15 @@ blockquote {
 }
 
 a, a:hover {
-  color: #00587a;
+  color: #85754d;
 }
 
 .bg-accent {
-  background-color: #008891;
+  background-color: #4b2e83;
 }
 
 h1, h2, h3, h4, h5 {
-  color: #0f3057;
-}
-
-blockquote {
-  border-left: 0.25em solid #008891;
+  color: #4b2e83;
 }
 
 hr {
@@ -45,7 +41,7 @@ hr {
 }
 
 .border-accent {
-  border-bottom: 0.25em solid #00587a;
+  border-bottom: 0.25em solid #b7a57a;
 }
 
 .thumbnail-square {
